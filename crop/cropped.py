@@ -36,7 +36,7 @@ if __name__ == '__main__':
                 m = [ int(x) for x in m ]
                 #print(m[0],',',m[1],',',m[4],',',m[5] )
                 name_output=name+'__'+str(i)+'.png'
-                crop(image_path, (m[0],m[1]-8,m[2],m[5]-3 ),os.path.abspath('ocr/cropped_image/'+name_output) )
+                crop(image_path, (m[0],m[1]-8,m[2],m[5]-3 ),os.path.abspath('ocra/cropped_image/'+name_output) )
                 #crop(image, (877,199,1130,1559),os.path.abspath('ocr/cropped_image/'+name_output) )
             file.close()
     
