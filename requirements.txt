@@ -1,0 +1,10 @@
+tqdm
+opencv-python
+Shapely
+matplotlib
+numpy
+tensorflow=
+Cython
+git+https://github.com/adrianc-a/tf-slim.git@remove_contrib
+ipython
+jupyter

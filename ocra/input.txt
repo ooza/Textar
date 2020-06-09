@@ -1,0 +1,3 @@
+./img_example/France24_vd08_frame_24-1.png
+./img_example/AljazeeraHD_vd15_frame_194__3.png
+./img_example/TunisiaNat1_vd14_frame_168__1.png
