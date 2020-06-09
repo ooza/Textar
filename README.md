@@ -1,7 +1,7 @@
 # Arabic text detection and recognition in scene and video images
 This work is dedicated to Arabic text recongition in multimedia documents, implemented using tensorflow and includes two parts: text regions localisation and textline recognition.
 
-#Text detection based on CTPN
+# Text detection based on CTPN
 Arabic text detection in scene/video images based on ctpn (connectionist text proposal network). It is implemented in tensorflow. The origin paper can be found [here](https://arxiv.org/abs/1609.03605). Also, the origin repo in caffe can be found in [here](https://github.com/tianzhi0549/CTPN). For more detail about the paper and code, see this [blog](http://slade-ruan.me/2017/10/22/text-detection-ctpn/). If you got any questions, check the issue first, if the problem persists, open a new issue.
 ***
 **NOTICE: Thanks to [banjin-xjy](https://github.com/banjin-xjy), which reimplemented the original code using Tensorflow.
@@ -32,7 +32,7 @@ python3 ./artext_detection/main/demo.py
 ```
 ***
 # OCR
-##demo
+## demo
 - crop the input images based on the output detection coordinates
 - save the cropped images' name in input_file.txt
 - run demo in the root
