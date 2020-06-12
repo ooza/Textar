@@ -4,4 +4,4 @@
 inputFolder=${1}
 outputFolder=${2}
 
-python3 ./artext_detection/main/demo.py inputFolder outputFolder
+python3 ./artext_detection/main/demoDetection.py ${inputFolder} ${outputFolder}
