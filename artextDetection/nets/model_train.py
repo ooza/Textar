@@ -1,8 +1,20 @@
+import os
+import sys
+
 import tensorflow as tf
 from tensorflow.contrib import slim
 
-from artext_detection.nets import vgg
-from artext_detection.utils.rpn_msr.anchor_target_layer import anchor_target_layer as anchor_target_layer_py
+
+
+from nets import vgg
+from utils.rpn_msr.anchor_target_layer import anchor_target_layer as anchor_target_layer_py
+
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
 
 
 def mean_image_subtraction(images, means=[123.68, 116.78, 103.94]):

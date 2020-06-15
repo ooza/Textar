@@ -1,7 +1,16 @@
 # coding:utf-8
 import numpy as np
+import os
+import sys
+import numpy.random as npr
 
-from artext_detection.utils.text_connector.text_proposal_graph_builder import TextProposalGraphBuilder
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
+from utils.text_connector.text_proposal_graph_builder import TextProposalGraphBuilder
 
 
 class TextProposalConnector:

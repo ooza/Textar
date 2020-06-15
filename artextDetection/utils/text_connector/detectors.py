@@ -1,10 +1,20 @@
 # coding:utf-8
 import numpy as np
-from artext_detection.utils.bbox.nms import nms
+import os
+import sys
+
+
 
 from .text_connect_cfg import Config as TextLineCfg
 from .text_proposal_connector import TextProposalConnector
 from .text_proposal_connector_oriented import TextProposalConnector as TextProposalConnectorOriented
+
+# Current path.
+cwd = os.getcwd()
+print("Current Path: " + cwd)
+sys.path.append(cwd + '/artextDetection/')
+print("Path to own libraries: " + cwd + '/artextDetection/')  # Local -text detection- libraries.
+from utils.bbox.nms import nms
 
 
 class TextDetector:

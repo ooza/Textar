@@ -1,7 +1,14 @@
 import numpy as np
-
-from artext_detection.utils.text_connector.other import clip_boxes
-from artext_detection.utils.text_connector.text_proposal_graph_builder import TextProposalGraphBuilder
+import os
+import sys
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
+from utils.text_connector.other import clip_boxes
+from utils.text_connector.text_proposal_graph_builder import TextProposalGraphBuilder
 
 
 class TextProposalConnector:

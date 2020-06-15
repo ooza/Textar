@@ -1,10 +1,20 @@
 # -*- coding:utf-8 -*-
 import numpy as np
-from artext_detection.utils.bbox.nms import nms
+import os
+import sys
+from utils.bbox.nms import nms
 
-from artext_detection.utils.bbox.bbox_transform import bbox_transform_inv, clip_boxes
-from artext_detection.utils.rpn_msr.config import Config as cfg
-from artext_detection.utils.rpn_msr.generate_anchors import generate_anchors
+from utils.bbox.bbox_transform import bbox_transform_inv, clip_boxes
+from utils.rpn_msr.config import Config as cfg
+from utils.rpn_msr.generate_anchors import generate_anchors
+
+
+# Current path.
+cwd = os.getcwd()
+
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
 
 DEBUG = False
 

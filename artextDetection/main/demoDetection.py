@@ -3,18 +3,37 @@ import os
 import shutil
 import sys
 import time
-
+import argparse
 import cv2
 import numpy as np
 import tensorflow as tf
+from pathlib import Path
+import ntpath
 
-sys.path.append(os.getcwd())
-from artext_detection.nets import model_train as model
-from artext_detection.utils.rpn_msr.proposal_layer import proposal_layer
-from artext_detection.utils.text_connector.detectors import TextDetector
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
 
-tf.app.flags.DEFINE_string('test_data_path', 'data/demo/', '')
-tf.app.flags.DEFINE_string('output_path', 'data/res/', '')
+from nets import model_train as model
+from utils.rpn_msr.proposal_layer import proposal_layer
+from utils.text_connector.detectors import TextDetector
+
+
+
+
+parser = argparse.ArgumentParser(description="Demo")
+parser.add_argument('image', type=str, help='Input image path')
+parser.add_argument('output_file', type=str, help='Output file path')
+
+args = parser.parse_args()
+
+
+
+tf.app.flags.DEFINE_string('test_data_path', args.image, '')
+tf.app.flags.DEFINE_string('output_path', args.output_file, '')
 tf.app.flags.DEFINE_string('gpu', '0', '')
 tf.app.flags.DEFINE_string('checkpoint_path', 'checkpoints_mlt/', '')
 FLAGS = tf.app.flags.FLAGS

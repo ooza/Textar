@@ -1,13 +1,22 @@
 # -*- coding:utf-8 -*-
 import numpy as np
+import os
+import sys
 import numpy.random as npr
-from artext_detection.utils.bbox.bbox import bbox_overlaps
 
-from artext_detection.utils.bbox.bbox_transform import bbox_transform
-from artext_detection.utils.rpn_msr.config import Config as cfg
-from artext_detection.utils.rpn_msr.generate_anchors import generate_anchors
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
+from utils.bbox.bbox import bbox_overlaps
+from utils.bbox.bbox_transform import bbox_transform
+from utils.rpn_msr.config import Config as cfg
+from utils.rpn_msr.generate_anchors import generate_anchors
 
 DEBUG = False
+
 
 
 def anchor_target_layer(rpn_cls_score, gt_boxes, im_info, _feat_stride=[16, ], anchor_scales=[16, ]):
