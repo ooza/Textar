@@ -1,7 +1,15 @@
 import numpy as np
+import os
+import sys
 
-from artext_detection.utils.text_connector.other import Graph
-from artext_detection.utils.text_connector.text_connect_cfg import Config as TextLineCfg
+# Current path.
+cwd = os.getcwd()
+print("***********")
+print("Current Path: "+cwd)
+sys.path.append(cwd+'/artextDetection/')
+print("Path to own libraries: "+ cwd+'/artextDetection/') # Local -text detection- libraries.
+from utils.text_connector.other import Graph
+from utils.text_connector.text_connect_cfg import Config as TextLineCfg
 
 
 class TextProposalGraphBuilder:
