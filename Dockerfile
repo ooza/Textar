@@ -28,6 +28,6 @@ RUN apt-get install -y libsm6 libxext6 libxrender-dev
 
 #WORKDIR /input/artext_detection
 
-RUN cd /input/artext_detection/utils/bbox && chmod +x make.sh && ./make.sh
+RUN cd /input/artextDetection/utils/bbox && chmod +x make.sh && ./make.sh
 
 WORKDIR /input/
