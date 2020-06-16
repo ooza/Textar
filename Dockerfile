@@ -10,23 +10,24 @@ LABEL version="1.0"
 ## Pyton installation ##
 RUN apt-get update && apt-get install -y python3.7 python3-pip git
 
-RUN mkdir -p /home/textar/
+#RUN mkdir -p /input/
 
-COPY requirements.txt .
+COPY requirements.txt /input/requirements.txt
 
 #RUN apt-get install libpcap-dev libpq-dev
 
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r /input/requirements.txt
 
-WORKDIR /home/textar/
+#WORKDIR /input/
 
-COPY . .
+COPY . /input/
 
-RUN apt-get update && apt-get install -y libsm6 libxext6 libxrender-dev
+RUN apt-get update
+RUN apt-get install -y libsm6 libxext6 libxrender-dev
 
-WORKDIR /home/textar/artext_detection
+#WORKDIR /input/artext_detection
 
-RUN cd utils/bbox && chmod +x make.sh && ./make.sh
+RUN cd /input/artext_detection/utils/bbox && chmod +x make.sh && ./make.sh
 
-WORKDIR /home/textar/
+WORKDIR /input/
