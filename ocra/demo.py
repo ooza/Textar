@@ -142,7 +142,7 @@ def init_model(session, gpu_id=-1):
     with tf.device(xpu):
         model = Model()
     tf.global_variables_initializer().run()
-    model_dir = './ocr/model/'
+    model_dir = './ocra/model/'
     names = os.listdir(model_dir)
     model_file = 'model.ckpt'
     model.saver.restore(session, model_dir + model_file)
@@ -150,7 +150,7 @@ def init_model(session, gpu_id=-1):
 
 
 def recog(img_path, model, session):
-    dict = './ocr/look_up.txt'
+    dict = './ocra/look_up.txt'
     f = codecs.open(dict, 'r', 'utf-8')
     look_up_lines = f.readlines()
     f.close()
@@ -200,6 +200,19 @@ if __name__ == '__main__':
                 fw.write('.\r\n')
 
         fw.close()
-    import result
-
+    file = open(output_file, 'r')
+    newFile = open("./ocra/final_resul.txt", 'w')
+    s = ''
+    for line in file:
+        if line[0] == ('"'):
+            newFile.write(s)
+            newFile.write("\n")
+            s = ''
+        elif line[0] == " ":
+            s = s + line[1]
+        else:
+            s = s + line[0]
+    newFile.write(s)
+    newFile.close()
+    file.close()
 

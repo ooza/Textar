@@ -1,5 +1,5 @@
-file =open ("./ocr/output3.txt", 'r')
-newFile=open ("./ocr/resulttxt.txt", 'w')
+file =open ("./ocra/output_htk_format.txt", 'r')
+newFile=open ("./ocra/final_resul.txt", 'w')
 s=''
 for line in file:
     if line[0]==('"'):
